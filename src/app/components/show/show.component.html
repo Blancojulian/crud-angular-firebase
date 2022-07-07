@@ -1,0 +1,22 @@
+<h1>Component Show</h1>
+
+<a routerLink="/create" class="btn btn-primary" type="button">Create</a>
+<table class="table table-hover table-striped">
+    <thead class="bg-dark text-white">
+        <th>Title</th>
+        <th>Author</th>
+        <th>Content</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of Posts">
+            <td>{{post.title}}</td>
+            <td>{{post.author}}</td>
+            <td>{{post.content}}</td>
+            <td>
+                <button routerLink="/edit/{{post.id}}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                <button (click)="deleteRow(post)" class="m-2 btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
